@@ -2,22 +2,49 @@ package com.recbill.model;
 
 public class Seller {
 
-    String sellerName, sellerSurname, sellerCompanyName;
+    private int sellerID;
+    private String sellerName, sellerSurname, sellerCompanyName;
 
-    String sellerAddress;
-    String sellerPhone;
+    private String sellerAddress;
+    private String sellerPhone;
 
-    String sellerCode;
-    String sellerVAT;
+    private String sellerCode;
+    private String sellerVAT;
 
-    String sellerBank;
-    String sellerIBAN;
+    private String sellerBank;
+    private String sellerIBAN;
+
+    public Seller(int sellerID, String sellerName, String sellerSurname,
+                  String sellerAddress, String sellerPhone, String sellerCode,
+                  String sellerVAT, String sellerBank, String sellerIBAN) {
+        this.sellerID = sellerID;
+        this.sellerName = sellerName;
+        this.sellerSurname = sellerSurname;
+        this.sellerAddress = sellerAddress;
+        this.sellerPhone = sellerPhone;
+        this.sellerCode = sellerCode;
+        this.sellerVAT = sellerVAT;
+        this.sellerBank = sellerBank;
+        this.sellerIBAN = sellerIBAN;
+    }
 
     public Seller(String sellerName, String sellerSurname, String sellerAddress,
                   String sellerPhone, String sellerCode, String sellerVAT,
                   String sellerBank, String sellerIBAN) {
         this.sellerName = sellerName;
         this.sellerSurname = sellerSurname;
+        this.sellerAddress = sellerAddress;
+        this.sellerPhone = sellerPhone;
+        this.sellerCode = sellerCode;
+        this.sellerVAT = sellerVAT;
+        this.sellerBank = sellerBank;
+        this.sellerIBAN = sellerIBAN;
+    }
+
+    public Seller(int sellerID, String sellerCompanyName, String sellerAddress, String sellerPhone,
+                  String sellerCode, String sellerVAT, String sellerBank, String sellerIBAN) {
+        this.sellerID = sellerID;
+        this.sellerCompanyName = sellerCompanyName;
         this.sellerAddress = sellerAddress;
         this.sellerPhone = sellerPhone;
         this.sellerCode = sellerCode;
@@ -108,5 +135,21 @@ public class Seller {
 
     public void setSellerIBAN(String sellerIBAN) {
         this.sellerIBAN = sellerIBAN;
+    }
+
+    @Override
+    public String toString() {
+        return "Seller{" +
+                "sellerID=" + sellerID +
+                ", sellerName='" + sellerName + '\'' +
+                ", sellerSurname='" + sellerSurname + '\'' +
+                ", sellerCompanyName='" + sellerCompanyName + '\'' +
+                ", sellerAddress='" + sellerAddress + '\'' +
+                ", sellerPhone='" + sellerPhone + '\'' +
+                ", sellerCode='" + sellerCode + '\'' +
+                ", sellerVAT='" + sellerVAT + '\'' +
+                ", sellerBank='" + sellerBank + '\'' +
+                ", sellerIBAN='" + sellerIBAN + '\'' +
+                '}';
     }
 }

@@ -2,22 +2,50 @@ package com.recbill.model;
 
 public class Buyer {
 
-    String buyerName, buyerSurname, buyerCompanyName;
+    private int buyerID;
+    private String buyerName, buyerSurname, buyerCompanyName;
 
-    String buyerAddress;
-    String buyerPhone;
+    private String buyerAddress;
+    private String buyerPhone;
 
-    String buyerCode;
-    String buyerVAT;
+    private String buyerCode;
+    private String buyerVAT;
 
-    String buyerBank;
-    String buyerIBAN;
+    private String buyerBank;
+    private String buyerIBAN;
+
+    public Buyer(int buyerID, String buyerName, String buyerSurname, String buyerAddress,
+                 String buyerPhone, String buyerCode, String buyerVAT,
+                 String buyerBank, String buyerIBAN) {
+        this.buyerID = buyerID;
+        this.buyerName = buyerName;
+        this.buyerSurname = buyerSurname;
+        this.buyerAddress = buyerAddress;
+        this.buyerPhone = buyerPhone;
+        this.buyerCode = buyerCode;
+        this.buyerVAT = buyerVAT;
+        this.buyerBank = buyerBank;
+        this.buyerIBAN = buyerIBAN;
+    }
 
     public Buyer(String buyerName, String buyerSurname, String buyerAddress,
                  String buyerPhone, String buyerCode, String buyerVAT,
                  String buyerBank, String buyerIBAN) {
         this.buyerName = buyerName;
         this.buyerSurname = buyerSurname;
+        this.buyerAddress = buyerAddress;
+        this.buyerPhone = buyerPhone;
+        this.buyerCode = buyerCode;
+        this.buyerVAT = buyerVAT;
+        this.buyerBank = buyerBank;
+        this.buyerIBAN = buyerIBAN;
+    }
+
+    public Buyer(int buyerID, String buyerCompanyName, String buyerAddress,
+                 String buyerPhone, String buyerCode, String buyerVAT,
+                 String buyerBank, String buyerIBAN) {
+        this.buyerID = buyerID;
+        this.buyerCompanyName = buyerCompanyName;
         this.buyerAddress = buyerAddress;
         this.buyerPhone = buyerPhone;
         this.buyerCode = buyerCode;
@@ -108,5 +136,21 @@ public class Buyer {
 
     public void setBuyerIBAN(String buyerIBAN) {
         this.buyerIBAN = buyerIBAN;
+    }
+
+    @Override
+    public String toString() {
+        return "Buyer{" +
+                "buyerID=" + buyerID +
+                ", buyerName='" + buyerName + '\'' +
+                ", buyerSurname='" + buyerSurname + '\'' +
+                ", buyerCompanyName='" + buyerCompanyName + '\'' +
+                ", buyerAddress='" + buyerAddress + '\'' +
+                ", buyerPhone='" + buyerPhone + '\'' +
+                ", buyerCode='" + buyerCode + '\'' +
+                ", buyerVAT='" + buyerVAT + '\'' +
+                ", buyerBank='" + buyerBank + '\'' +
+                ", buyerIBAN='" + buyerIBAN + '\'' +
+                '}';
     }
 }
