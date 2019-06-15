@@ -1,6 +1,6 @@
 package com.recbill.model;
 
-public class Items {
+public class Item {
 
     private int itemID;
     private String itemCode;
@@ -11,8 +11,8 @@ public class Items {
     private double itemPrice;
     private double itemAmount;
 
-    public Items(int itemID, String itemCode, String itemName, String itemType, String itemUnits,
-                 double itemQuantity, double itemPrice, double itemAmount) {
+    public Item(int itemID, String itemCode, String itemName, String itemType, String itemUnits,
+                double itemQuantity, double itemPrice, double itemAmount) {
         this.itemID = itemID;
         this.itemCode = itemCode;
         this.itemName = itemName;
@@ -23,8 +23,8 @@ public class Items {
         this.itemAmount = itemAmount;
     }
 
-    public Items(String itemCode, String itemName, String itemType, String itemUnits,
-                 double itemQuantity, double itemPrice, double itemAmount) {
+    public Item(String itemCode, String itemName, String itemType, String itemUnits,
+                double itemQuantity, double itemPrice, double itemAmount) {
         this.itemCode = itemCode;
         this.itemName = itemName;
         this.itemType = itemType;
@@ -100,7 +100,7 @@ public class Items {
 
     @Override
     public String toString() {
-        return "Items{" +
+        return "Item{" +
                 "itemID=" + itemID +
                 ", itemCode='" + itemCode + '\'' +
                 ", itemName='" + itemName + '\'' +
