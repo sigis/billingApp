@@ -14,6 +14,12 @@ public class Seller {
     private String sellerBank;
     private String sellerIBAN;
 
+    public Seller(int sellerID, String sellerCompanyName, String sellerAddress) {
+        this.sellerID = sellerID;
+        this.sellerCompanyName = sellerCompanyName;
+        this.sellerAddress = sellerAddress;
+    }
+
     public Seller(int sellerID, String sellerName, String sellerSurname,
                   String sellerAddress, String sellerPhone, String sellerCode,
                   String sellerVAT, String sellerBank, String sellerIBAN) {

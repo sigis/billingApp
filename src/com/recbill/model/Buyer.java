@@ -14,6 +14,12 @@ public class Buyer {
     private String buyerBank;
     private String buyerIBAN;
 
+    public Buyer(int buyerID, String buyerName, String buyerAddress) {
+        this.buyerID = buyerID;
+        this.buyerName = buyerName;
+        this.buyerAddress = buyerAddress;
+    }
+
     public Buyer(int buyerID, String buyerName, String buyerSurname, String buyerAddress,
                  String buyerPhone, String buyerCode, String buyerVAT,
                  String buyerBank, String buyerIBAN) {

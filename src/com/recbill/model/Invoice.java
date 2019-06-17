@@ -128,6 +128,10 @@ public class Invoice {
     public String toString() {
         return "Invoice{" +
                 "invoiceID=" + invoiceID +
+                ", buyerID=" + buyerID +
+                ", sellerID=" + sellerID +
+                ", agentID=" + agentID +
+                ", itemID=" + itemID +
                 ", buyer=" + buyer +
                 ", seller=" + seller +
                 ", agent=" + agent +

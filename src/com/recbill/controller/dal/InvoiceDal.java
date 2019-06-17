@@ -7,15 +7,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.recbill.resources.cst.sqlCST.SELECT_INVOICES_BY_DATE;
+import static com.recbill.controller.dal.CloseConn.closeConn;
+import static com.recbill.resources.cst.sqlConst.*;
 
 public class InvoiceDal {
 
     private DataSource dataSource;
 
     public InvoiceDal(DataSource ds) {
-        dataSource = ds; // ds - is a parameter being passed into this constructor
-    }
+        dataSource = ds;
+    } // ds - is a parameter being passed into this constructor
     
     public List<Invoice> getInvoices() throws Exception {
         List<Invoice> invoices = new ArrayList<>();
@@ -29,7 +30,7 @@ public class InvoiceDal {
             conn = dataSource.getConnection();
 
             // create statemment
-            String sql = SELECT_INVOICES_BY_DATE;
+            String sql = SELECT_INVOICES;
             stmt = conn.createStatement();
 
             // execute query
@@ -45,10 +46,10 @@ public class InvoiceDal {
                 int itID = rs.getInt("item_id");
                 double invAmt = rs.getDouble("invoice_amount");
 
-                // create new invoice object
+                // create new Invoice object
                 Invoice invoice = new Invoice(invID, buyID, selID, agID, itID, invAmt);
 
-                // add invoice to the list of invoices
+                // add invoice to the list of Invoices
                 invoices.add(invoice);
 
             }
@@ -57,26 +58,26 @@ public class InvoiceDal {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            close(conn, stmt, rs);
+            closeConn(conn, stmt, rs);
         }
 
         return invoices;
     }
 
-    private void close(Connection conn, Statement stmt, ResultSet rs) {
-
-        try {
-            if(conn != null) {
-                conn.close();
-            }
-            if (stmt != null) {
-                stmt.close();
-            }
-            if (rs != null) {
-                rs.close(); // doesn't really close those ... just put back to the connections pool
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    private void close(Connection conn, Statement stmt, ResultSet rs) {
+//
+//        try {
+//            if(conn != null) {
+//                conn.close();
+//            }
+//            if (stmt != null) {
+//                stmt.close();
+//            }
+//            if (rs != null) {
+//                rs.close(); // doesn't really close those ... just put back to the connections pool
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
